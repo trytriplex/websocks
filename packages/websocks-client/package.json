@@ -1,0 +1,58 @@
+{
+  "name": "@triplex/websocks-client",
+  "version": "0.0.1",
+  "description": "An end-to-end typed websocket API router and React client.",
+  "author": {
+    "name": "Triplex",
+    "email": "support@triplex.dev",
+    "url": "https://x.com/trytriplex"
+  },
+  "exports": {
+    "./events": {
+      "types": "./src/events.ts",
+      "module": "./src/events.ts",
+      "default": "./src/events.ts"
+    },
+    "./react": {
+      "types": "./src/react.ts",
+      "module": "./src/react.ts",
+      "default": "./src/react.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "swc ./src -d ./dist",
+    "typedef": "tsc"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.59",
+    "@swc/core": "^1.6.5",
+    "@types/react": "^18.0.27",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-error-boundary": "^3.1.4",
+    "typescript": "^5.7.2"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "optionalDependencies": {
+    "ws": "^8.12.0"
+  },
+  "publishConfig": {
+    "exports": {
+      "./events": {
+        "types": "./dist/events.d.ts",
+        "module": "./dist/events.js",
+        "default": "./dist/events.js"
+      },
+      "./react": {
+        "types": "./dist/react.d.ts",
+        "module": "./dist/react.js",
+        "default": "./dist/react.js"
+      }
+    }
+  }
+}
